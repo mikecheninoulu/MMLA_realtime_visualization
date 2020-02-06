@@ -1,13 +1,15 @@
 
 'Design © Copyright 2019 by Haoyu Chen for MMKB at TU Delft and Oulu University'
 
-# MMLA_realtime_visualization
+MMLA_realtime_visualization
+==========================
 
 Multi-modal learning analytics for realtime visualization for CEL TUDelft and NIE in NTU singapore
 
 Realtime - mmla learning analytics for collaborative learning
 
-usage：
+
+## Usage：
 
 1. move to RealtimeOpenpose folder
 
@@ -24,9 +26,9 @@ build and run the project by press cmd+B
 to achive the realtime feedback
 
 
-function：
+## Function：
 
-RealtimeOpenpose:
+### RealtimeOpenpose:
 
 1. openpose realtime recognition
 
@@ -38,7 +40,7 @@ RealtimeOpenpose:
     <img src="realtimerecognition.png", width="480">
 </p>
 
-Visualization demo
+### Visualization demo
 
 1. realtime time feedback
 
@@ -48,7 +50,7 @@ Visualization demo
     <img src="visualizationdemo.png", width="480">
 </p>
 
-note：
+## Note：
 
 1.it's a cpu version, better result should be achieved by GPU
 
@@ -57,7 +59,7 @@ note：
 3.only test on Mac
 
 
-to do：
+## To do：
 
 1.more elements in the visualization
 
@@ -66,7 +68,7 @@ to do：
 3.more indicators design
 
 
-see more from the youtube video:
+## see more from the youtube video:
 
 [Realtime demo](https://www.youtube.com/watch?v=He0g9OeblY8)
 
