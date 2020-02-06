@@ -11,7 +11,7 @@ Realtime - mmla learning analytics for collaborative learning
 
 ## Usage：
 
-1. step one
+### step one
 
 move to RealtimeOpenpose folder
 
@@ -21,7 +21,7 @@ python run_TUDelft_visualization.py
 
 to achieve the realtime recognition
 
-2. step two
+### step two
 
 use unity to open the project from Visualization demo folder
 
