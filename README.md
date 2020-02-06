@@ -98,4 +98,16 @@ to achive the realtime feedback
 </p>
 
 
+## Citation
+Please cite these papers in your publications if it helps your research. 
 
+    @inproceedings{haoyu@icls,
+      author = {Haoyu Chen and Esther Tan and Yoon Lee and Sambit Paharaj and Marcus Specht and Guoying Zhao},
+      booktitle = {The International Conference of the learning sciences},
+      title = {Developing AI into Explanatory Supporting Models: An Explanation-visualized Deep Learning Prototype for Computer Supported Collaborative Learning},
+      year = {2020}
+    }
+
+## Acknowledge
+MMLA realtime visualization is freely available for free non-commercial use. Thanks to team members: Yoon Lee, Haoyu Chen, Esther Tan, Sambit Paharaj, Marcus Specht and Guoying Zhao.
+Copyright@ Technology university of Delft & University of Oulu
