@@ -31,9 +31,9 @@ Realtime - mmla learning analytics for collaborative learning
 
 ### step one
 
-move to RealtimeOpenpose folder
+Move to RealtimeOpenpose folder
 
-run:
+Run:
 
 python run_TUDelft_visualization.py
 
@@ -41,7 +41,7 @@ to achieve the realtime recognition
 
 ### step two
 
-use unity to open the project from Visualization demo folder
+Use Unity to open the project from Visualization demo folder
 
 build and run the project by press cmd+B
 
@@ -52,9 +52,9 @@ to achive the realtime feedback
 
 ### RealtimeOpenpose:
 
-1. openpose realtime recognition
+1. Openpose realtime recognition
 
-2. action realtime recognition
+2. Action realtime recognition
 
 3. KB level realtime recognition
 
@@ -64,9 +64,9 @@ to achive the realtime feedback
 
 ### Visualization demo
 
-1. realtime time feedback
+1. Realtime time feedback
 
-2. visualization of the flower growth
+2. Visualization of the flower growth
 
 <p align="center">
     <img src="visualizationdemo.png", width="480">
@@ -74,18 +74,17 @@ to achive the realtime feedback
 
 ## Note：
 
-1.it's a cpu version, better result should be achieved by GPU
+1. It's a cpu version, better result should be achieved by GPU
 
-2.frame rate with CPU version is 0.8-1.0
-
+2. Frame rate with CPU version is 0.8-1.0
 
 ## To do：
 
-1.more elements in the visualization
+1. More elements in the visualization
 
-2.realtime speech recognition
+2. Realtime speech recognition
 
-3.more indicators design
+3. More indicators design
 
 
 ## see more from the youtube video:
