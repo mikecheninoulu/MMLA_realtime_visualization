@@ -9,6 +9,24 @@ Multi-modal learning analytics for realtime visualization for CEL TUDelft and NI
 Realtime - mmla learning analytics for collaborative learning
 
 
+## Operating Systems
+- **Mac OSX** Mavericks and above.
+
+## Requirements and Dependencies
+    - Python 3.5 and above
+    - Using [Anaconda](https://www.anaconda.com/download/) is recommended.
+    - Opencv
+        ```
+            pip install opencv-python
+        ```
+    - tensorflow1.3
+        ```
+            pip install tensorflow-gpu==1.3.0
+        ```
+    - filterpy
+        ```
+            pip install filterpy
+        ```
 ## Usage：
 
 ### step one
@@ -59,8 +77,6 @@ to achive the realtime feedback
 1.it's a cpu version, better result should be achieved by GPU
 
 2.frame rate with CPU version is 0.8-1.0
-
-3.only test on Mac
 
 
 ## To do：
