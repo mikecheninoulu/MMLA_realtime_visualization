@@ -26,9 +26,13 @@ RealtimeOpenpose:
 2. action realtime recognition
 3. KB level realtime recognition
 
+![demo](realtimerecognition.png)
+
 Visualization demo
 1. realtime time feedback
 2. visualization of the flower growth
+
+![demo](visualizationdemo.png)
 
 
 note：
@@ -41,5 +45,11 @@ to do：
 1.more elements in the visualization
 2.realtime speech recognition
 3.more indicators design
+
+
+see more from the youtube video:
+[GitHub](https://www.youtube.com/watch?v=He0g9OeblY8)
+![demo](youtube.png)
+![demo](youtube2.png)
 
 
