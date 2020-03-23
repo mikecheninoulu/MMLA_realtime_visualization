@@ -40,8 +40,9 @@ Realtime - mmla learning analytics for collaborative learning
 Move to RealtimeOpenpose folder
 
 Run:
-
+```
 python run_TUDelft_visualization.py
+```
 
 to achieve the realtime recognition
 
