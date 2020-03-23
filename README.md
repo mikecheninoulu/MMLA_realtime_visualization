@@ -8,6 +8,10 @@ Multi-modal learning analytics for realtime visualization for CEL TUDelft and NI
 
 Realtime - mmla learning analytics for collaborative learning
 
+<p align="center">
+    <img src="demo live.png", width="480">
+</p>
+
 
 ## Operating Systems
 - **Mac OSX** Mavericks and above.
@@ -43,7 +47,7 @@ to achieve the realtime recognition
 
 ### step two
 
-Use Unity to open the project from MMLA_Visualization_complete_version ~~(Visualization demo)~~ folder for version 2 ~~version 2~~.
+Use Unity to open the project from MMLA_Visualization_complete_version ~~(Visualization demo)~~ folder for version 2 ~~version 1~~.
 
 build and run the project by press cmd+B
 
