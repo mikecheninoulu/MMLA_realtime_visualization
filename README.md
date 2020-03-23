@@ -14,6 +14,7 @@ Realtime - mmla learning analytics for collaborative learning
 
 ## Requirements and Dependencies
     - Python 3.5 and above
+    - Unity 2018.4 and above
     - Using [Anaconda](https://www.anaconda.com/download/) is recommended.
     - Opencv
         ```
@@ -27,6 +28,7 @@ Realtime - mmla learning analytics for collaborative learning
         ```
             pip install filterpy
         ```
+       
 ## Usage：
 
 ### step one
@@ -41,7 +43,7 @@ to achieve the realtime recognition
 
 ### step two
 
-Use Unity to open the project from Visualization demo folder
+Use Unity to open the project from MMLA_Visualization_complete_version ~~(Visualization demo)~~ folder for version 2 ~~version 2~~.
 
 build and run the project by press cmd+B
 
@@ -56,7 +58,7 @@ to achive the realtime feedback
 
 2. Action realtime recognition
 
-3. KB level realtime recognition
+3. Collaborative level realtime recognition
 
 <p align="center">
     <img src="realtimerecognition.png", width="480">
@@ -66,11 +68,18 @@ to achive the realtime feedback
 
 1. Realtime time feedback
 
-2. Visualization of the flower growth
+2. Visualization of the ~~flower growth~~
 
 <p align="center">
     <img src="visualizationdemo.png", width="480">
 </p>
+
+3. Visualization of the plant growth
+
+<p align="center">
+    <img src="scene.png", width="480">
+</p>
+
 
 ## Note：
 
@@ -89,11 +98,15 @@ to achive the realtime feedback
 
 ## see more from the youtube video:
 
-[Realtime demo](https://www.youtube.com/watch?v=He0g9OeblY8)
+[Realtime demo version1](https://www.youtube.com/watch?v=He0g9OeblY8) 
+[Realtime demo version2, LAK demo](https://www.youtube.com/watch?v=pco-YoR3BFs) 
+
+
 
 <p align="center">
     <img src="youtube.png", width="480">
       <img src="youtube2.png", width="480">
+    <img src="demo scene.png", width="480">
 </p>
 
 
@@ -104,6 +117,13 @@ Please cite these papers in your publications if it helps your research.
       author = {Haoyu Chen and Esther Tan and Yoon Lee and Sambit Paharaj and Marcus Specht and Guoying Zhao},
       booktitle = {The International Conference of the learning sciences},
       title = {Developing AI into Explanatory Supporting Models: An Explanation-visualized Deep Learning Prototype for Computer Supported Collaborative Learning},
+      year = {2020}
+    }
+    
+    @inproceedings{yoon@lak,
+      author = {Yoon Lee, Haoyu Chen, Esther Tan, Sambit Praharaj, Marcus Specht},
+      booktitle = {International Learning Analytics and Knowledge (LAK) Conference, demo session},
+      title = {FLOWer: Feedback Loop for Group Work Supporter},
       year = {2020}
     }
 
