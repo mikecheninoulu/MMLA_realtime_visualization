@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{0B904302-1A3E-20D3-906D-6A1F17E5CCDC}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LowPolyTreePack/MMLAscript.cs">
+    <Files>
+      <File FileName="Assets/LowPolyTreePack/MMLAscript.cs" Line="369" Column="22" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MMLA_Visualization_complete_version" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Day-Night Skyboxes" expanded="True" />
+              <Node name="LowPolyTreePack" expanded="True">
+                <Node name="MMLAscript.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b0dc4cbe-dc55-424e-9187-444e5f9109fe" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

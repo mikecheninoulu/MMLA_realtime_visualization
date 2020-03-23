@@ -1,0 +1,355 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using UnityEngine;
+using UnityEngine.UI;
+
+
+public class MMLAscript : MonoBehaviour
+{
+    // define the plants list by using the concept of object pool
+    private List<GameObject> plantsObjects;      //plant list
+    private int currentIndex; //index of the pool
+    private int plantsnum = 26;
+
+    //define the plants
+    public GameObject pineTree;
+    public GameObject pineTree02;
+    public GameObject pineTree03;
+    public GameObject pineTree04;
+    public GameObject pineTree05;
+    public GameObject pineTree06;
+    public GameObject pineTree07;
+    public GameObject pineTree08;
+    public GameObject pineTree09;
+    public GameObject pineTree10;
+    public GameObject pineTree11;
+    public GameObject pineTree12;
+    public GameObject pineTree13;
+    public GameObject pineTree14;
+    public GameObject pineTree15;
+    public GameObject pineTree16;
+    public GameObject pineTree17;
+    public GameObject pineTree18;
+    public GameObject pineTree19;
+    public GameObject pineTree20;
+    public GameObject pineTree21;
+    public GameObject pineTree22;
+    public GameObject pineTree23;
+    public GameObject pineTree24;
+    public GameObject pineTree25;
+    public GameObject pineTree26;
+
+    //size of the default tree
+    public Vector3 defaultSize;
+    public Vector3 defaultSize02;
+    public Vector3 defaultSize03;
+    public Vector3 defaultSize04;
+    public Vector3 defaultSize05;
+    public Vector3 defaultSize06;
+    public Vector3 defaultSize07;
+    public Vector3 defaultSize08;
+    public Vector3 defaultSize09;
+    public Vector3 defaultSize10;
+    public Vector3 defaultSize11;
+    public Vector3 defaultSize12;
+    public Vector3 defaultSize13;
+    public Vector3 defaultSize14;
+    public Vector3 defaultSize15;
+    public Vector3 defaultSize16;
+    public Vector3 defaultSize17;
+    public Vector3 defaultSize18;
+    public Vector3 defaultSize19;
+    public Vector3 defaultSize20;
+    public Vector3 defaultSize21;
+    public Vector3 defaultSize22;
+    public Vector3 defaultSize23;
+    public Vector3 defaultSize24;
+    public Vector3 defaultSize25;
+    public Vector3 defaultSize26;
+
+    //define the temp size of the plants
+    public Vector3 currentSize;
+    public Vector3 currentSize02;
+    public Vector3 currentSize03;
+    public Vector3 currentSize04;
+    public Vector3 currentSize05;
+    public Vector3 currentSize06;
+    public Vector3 currentSize07;
+    public Vector3 currentSize08;
+    public Vector3 currentSize09;
+    public Vector3 currentSize10;
+    public Vector3 currentSize11;
+    public Vector3 currentSize12;
+    public Vector3 currentSize13;
+    public Vector3 currentSize14;
+    public Vector3 currentSize15;
+    public Vector3 currentSize16;
+    public Vector3 currentSize17;
+    public Vector3 currentSize18;
+    public Vector3 currentSize19;
+    public Vector3 currentSize20;
+    public Vector3 currentSize21;
+    public Vector3 currentSize22;
+    public Vector3 currentSize23;
+    public Vector3 currentSize24;
+    public Vector3 currentSize25;
+    public Vector3 currentSize26;
+
+    // initialize the moutain
+    public GameObject mountain;
+    public GameObject mountain2;
+    public GameObject mountain3;
+
+    // initialize the plane
+    public GameObject plane;
+
+    // initialize the scene canvas
+    public Text Video_text;
+    public Text Audio_text;
+    public Text Context_text;
+    public Text CL_text;
+
+
+    // other parameters
+    //stream data
+    public string latest_data;
+    public string Video_feedback;
+    public string Audio_feedback;
+    public string Context_feedback;
+
+    // feedback array, m*n n = person, m = modality
+    public int[] video_feedback_array = { 0, 0, 0 };
+    public int[] audio_feedback_array = { 0, 0, 0 };
+    public int[] context_feedback_array = { 0, 0, 0 };
+
+    //collaborative learning level
+    public int CL_level;
+    //the list of the level
+    private List<string> CL_list = new List<string>();
+
+    //define colors
+    public UnityEngine.Object[] materials;
+    
+
+    //define renderer
+    Renderer mountainrend;
+    Renderer mountain2rend;
+    Renderer mountain3rend;
+    Renderer planerend;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        //load all the materials
+        materials = Resources.LoadAll("Materials", typeof(Material));
+        //print(materials.Length);
+
+        // create a plant pool
+        plantsObjects = new List<GameObject>();
+        //load plants into plant list
+        plantsObjects.Add(pineTree);
+        plantsObjects.Add(pineTree02);
+        plantsObjects.Add(pineTree03);
+        plantsObjects.Add(pineTree04);
+        plantsObjects.Add(pineTree05);
+        plantsObjects.Add(pineTree06);
+        plantsObjects.Add(pineTree07);
+        plantsObjects.Add(pineTree08);
+        plantsObjects.Add(pineTree09);
+        plantsObjects.Add(pineTree10);
+        plantsObjects.Add(pineTree11);
+        plantsObjects.Add(pineTree12);
+        plantsObjects.Add(pineTree13);
+        plantsObjects.Add(pineTree14);
+        plantsObjects.Add(pineTree15);
+        plantsObjects.Add(pineTree16);
+        plantsObjects.Add(pineTree17);
+        plantsObjects.Add(pineTree18);
+        plantsObjects.Add(pineTree19);
+        plantsObjects.Add(pineTree20);
+        plantsObjects.Add(pineTree21);
+        plantsObjects.Add(pineTree22);
+        plantsObjects.Add(pineTree23);
+        plantsObjects.Add(pineTree24);
+        plantsObjects.Add(pineTree25);
+        plantsObjects.Add(pineTree26);
+
+        //initial the sizes of the plants
+        for (int i = 0; i < plantsnum; ++i)
+        {
+            plantsObjects[i].SetActive(false);    //make all the plant deactivate first
+        }
+
+        //initialize the data from the stream
+        Video_feedback = "No movement!";
+        Audio_feedback = "No voice!";
+        Context_feedback = "No discourse!";
+        CL_level = 0;
+
+        //set the text in the canvas
+        Video_text.text = "Video feedback"+ Video_feedback;
+        Audio_text.text = "Audio feedback:" + Audio_feedback;
+        Context_text.text = "Context feedback:" + Context_feedback;
+        CL_text.text = "Collaborative level:" + CL_level;
+
+        //define KB level
+        CL_list.Add(", Waiting for Collaboration.");
+        CL_list.Add(", Idea Generation.");
+        CL_list.Add(", Idea Improvement.");
+        CL_list.Add(", Rise Above.");
+
+
+        //render the scene
+        //load colors
+        mountainrend = mountain.GetComponent<Renderer>();
+        mountainrend.sharedMaterial = (Material)materials[14];
+        //mountainrend.sharedMaterials[1] = (Material)materials[12];
+
+        mountain2rend = mountain2.GetComponent<Renderer>();
+        mountain2rend.sharedMaterial = (Material)materials[14];
+
+        mountain3rend = mountain3.GetComponent<Renderer>();
+        mountain3rend.sharedMaterial = (Material)materials[14];
+
+
+        planerend = plane.GetComponent<Renderer>();
+        planerend.material = (Material)materials[8];
+
+    }
+
+    // Update is called once per frame
+
+    void Update()
+    {
+
+        // read data as stream
+        var path = @"/Users/chenhaoyu/Desktop/MMdata_stream.txt";
+        StreamReader r = new StreamReader(path);
+        while (r.EndOfStream == false)
+        {
+            latest_data = r.ReadLine();
+        }
+
+        //give data to the feed back
+        try
+        {
+            //stream formatting
+            //person 1      person 2       person3
+            //action audio action audio action audio
+            //3       0      6      0     0     0
+
+            String[] data_list = latest_data.Split(' ');
+            // feedback array, m*n n = person, m = modality
+            video_feedback_array[0] = int.Parse(data_list[0]);
+            video_feedback_array[1] = int.Parse(data_list[2]);
+            video_feedback_array[2] = int.Parse(data_list[4]);
+            audio_feedback_array[0] = int.Parse(data_list[1]);
+            audio_feedback_array[1] = int.Parse(data_list[3]);
+            audio_feedback_array[2] = int.Parse(data_list[5]);
+
+            //int n = 0;
+
+            //only two modality
+            //for (int m = 0; m < 2; ++m)
+            //{
+            //    for (int p = 0; p < 3; ++p)
+            //   {
+            //        feedback_array[m,p] = Int32.Parse(data_list[n]);    //make all the plant deactivate first
+            //        n += 1;
+            //    }
+            //}
+
+        }
+        catch (Exception)
+        {
+            Console.WriteLine("Start data stream wrong!");
+        }
+        r.Close();
+
+        //Inference
+        //Inference video
+        //no video feedback
+        //int row1Sum = feedback_array[,].Cast<int>().Sum();
+        if (video_feedback_array.Cast<int>().Sum() == 0)
+        {
+            Video_text.text = "Video feedback: " + "No movement!";
+        }
+        else
+        {
+            //more seed animation
+            //animation
+
+            if (video_feedback_array.Contains(4) || video_feedback_array.Contains(7) || video_feedback_array.Contains(8) || video_feedback_array.Contains(9) || video_feedback_array.Contains(10))
+            {
+                Video_text.text = "Video feedback: " + "Significant movement!";
+
+                //plant growth animation
+
+            }
+            else
+            {
+                Video_text.text = "Video feedback: " + "Normal movement!";
+            }
+
+        }
+
+        if (audio_feedback_array.Cast<int>().Sum() == 0)
+        {
+            Video_text.text = "Audio feedback: " + "No movement!";
+        }
+        else
+        {
+            if (video_feedback_array.Contains(4) || video_feedback_array.Contains(7) || video_feedback_array.Contains(8) || video_feedback_array.Contains(9) || video_feedback_array.Contains(10))
+            {
+                Video_text.text = "Video feedback: " + "Significant movement!";
+            }
+            else
+            {
+                Video_text.text = "Video feedback: " + "Normal movement!";
+            }
+
+        }
+
+
+        //FlowerAnimation();
+
+
+        //read the data stream one by one
+        //String[] strlist = Feedback_data.Split(' ');
+        Video_text.text = "Video feedback: " + Video_feedback;
+        Audio_text.text = "Audio feedback: " + Audio_feedback;
+        Context_text.text = "Context feedback: " + Context_feedback;
+        CL_text.text = "Collaborative level: " + CL_level.ToString() + CL_list.ElementAt(CL_level);
+
+    }
+
+    //flower animation
+    void FlowerAnimation()
+    {
+
+        if (currentSize.x < (CL_level / 4.0 * defaultSize04.x))
+        {
+            currentSize.x = currentSize.x * (1.002f);
+            currentSize.y = currentSize.y * (1.002f);
+            currentSize.z = currentSize.z * (1.002f);
+        }
+        pineTree.transform.localScale = currentSize;
+    }
+
+
+    void FlowerDeath()
+    {
+
+        if (currentSize.x > defaultSize.x)
+        {
+            currentSize.x = currentSize.x * (0.98f);
+            currentSize.y = currentSize.y * (0.98f);
+            currentSize.z = currentSize.z * (0.98f);
+        }
+
+        pineTree.transform.localScale = currentSize;
+    }
+
+}
